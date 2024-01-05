@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowClockwise } from 'react-bootstrap-icons';
 import { useRef } from 'react';
 import { toPng } from 'html-to-image';
