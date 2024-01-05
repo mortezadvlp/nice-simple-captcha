@@ -11,7 +11,7 @@ export default function Captcha( {
         inputClassName = '',
         characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789',
         length = 5,
-        darkMode = false,
+        blackScreen = false,
         crossLine = true,
         expireAfterSec = 60,
         onCaptchaValidate = (passed, messageCode) => {},
@@ -46,7 +46,7 @@ export default function Captcha( {
         setTimeout(() => {
             createCaptchaChars();
         }, 500);
-    }, [characters, length, crossLine, darkMode])
+    }, [characters, length, crossLine, blackScreen])
 
     useEffect(() => {
         if (captchaChars.length > 0) {
@@ -98,9 +98,9 @@ export default function Captcha( {
     return (
         <div className={`${styles.py2} ${styles.dFlex} ${styles.flexColumn} ${styles.gap2} ${className}`} style={style} >
             <div className={`${styles.positionRelative}`} >
-                <div ref={captchaRef} className={`${styles.captchaCharacters} ${darkMode ? styles.bgDark : styles.bgLight} ${styles.dFlex} ${styles.flexRow} ${styles.justifyContentEvenly} ${styles.p2} ${styles.positionRelative}`} >
+                <div ref={captchaRef} className={`${styles.captchaCharacters} ${blackScreen ? styles.bgDark : styles.bgLight} ${styles.dFlex} ${styles.flexRow} ${styles.justifyContentEvenly} ${styles.p2} ${styles.positionRelative}`} >
                     {captchaChars.map((char, index) =>
-                        <span key={index} className={`${darkMode ? styles.textWhite : styles.textBlack}`} 
+                        <span key={index} className={`${blackScreen ? styles.textWhite : styles.textBlack}`} 
                             style={{
                                     scale: char.scale,
                                     fontWeight: char.fontWeight,
@@ -110,14 +110,14 @@ export default function Captcha( {
                         >{char.ch}</span>
                     )}
                     {crossLine &&
-                    <div className={`${styles.borderBottom} ${darkMode ? styles.borderLight : styles.borderDark} ${styles.order2} ${styles.positionAbsolute} ${styles.top50}`} style={{width: '90%'}} ></div>
+                    <div className={`${styles.borderBottom} ${blackScreen ? styles.borderLight : styles.borderDark} ${styles.order2} ${styles.positionAbsolute} ${styles.top50}`} style={{width: '90%'}} ></div>
                     }
                 </div>
                 <div className={`${styles.w100} ${styles.positionAbsolute} ${styles.top0} ${styles.start0}`} ><img src={img} /></div>
             </div>
             <div className={`${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCenter} ${styles.gap2}`} >
                 <input dir='ltr' className={inputClassName} value={inputCaptcha.value} onChange={(e) => setInputCaptcha(s => ({...s, value: e.target.value}))} onKeyDown={(e) => onEnterCaptured(e.key)} />
-                <button className={`${styles.lead} ${darkMode ? styles.textBlack : styles.textWhite} ${styles.bgTransparent} ${styles.border0} ${styles.p0}`} onClick={() => createCaptchaChars()} ><ArrowClockwise /> </button>
+                <button className={`${styles.lead} ${styles.textBlack} ${styles.bgTransparent} ${styles.border0} ${styles.p0}`} onClick={() => createCaptchaChars()} ><ArrowClockwise /> </button>
             </div>
         </div>
     );

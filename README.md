@@ -4,6 +4,8 @@
 
 [![NPM](https://img.shields.io/npm/v/nice-simple-captcha.svg)](https://www.npmjs.com/package/nice-simple-captcha) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## Under Test process. Don't use currently.
+
 ## Install
 
 ```bash

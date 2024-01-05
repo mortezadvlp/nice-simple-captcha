@@ -5,7 +5,7 @@ import 'nice-simple-captcha/dist/index.css'
 
 const App = () => {
   const [result, setResult] = useState({passed: false, messageCode: 0});
-  const [dark, setDark] = useState(false);
+  const [blackScreen, setBlackScreen] = useState(false);
   const [len, setLen] = useState(5);
   const [line, setLine] = useState(true);
   const [validDur, setValidDur] = useState(60);
@@ -34,8 +34,11 @@ const App = () => {
     <div >
       <div >
         <div >
-          <input type='checkbox' value={dark} onChange={(e) => setDark(e.target.value)} />
-          <span >Dark Mode</span>
+          <span >Screen Color</span>
+          <select value={blackScreen} onChange={(e) => setBlackScreen(e.target.value)} >
+            <option value={false} >White</option>
+            <option value={true} >Black</option>
+          </select>
         </div>
         <div >
           <input type='checkbox' value={line} onChange={(e) => setLine(e.target.value)} />
@@ -47,7 +50,7 @@ const App = () => {
         </div>
         <div >
           <span >Expire After Sec.</span>
-          <input type='number' value={validDur} onChange={(e) => setValidDur(e.target.value)} min='3' max='10' />
+          <input type='number' value={validDur} onChange={(e) => setValidDur(e.target.value)} min='30' max='600' />
         </div>
         <p >Captcha Validation Status:</p>
         <p >Passed: {result.passed}</p>
@@ -58,12 +61,12 @@ const App = () => {
       <NiceSimpleCaptcha
         className={''}
         inputClassName={''}
-        darkMode={dark}
+        blackScreen={blackScreen}
         characters={'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789'}
         length={len}
         crossLine={line}
         expireAfterSec={validDur}
-        style={{}}
+        style={{width: '200px'}}
         onCaptchaValidate={(passed, messageCode) => captchaValidate(passed, messageCode)}
         onEnterPressed={() => onEnterPressed()}
       />

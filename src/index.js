@@ -11,7 +11,7 @@ export const NiceSimpleCaptcha = (
     {
       className = '',
       inputClassName = '',
-      darkMode = false,
+      blackScreen = false,
       characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789',
       length = 5,
       crossLine = true,
@@ -26,7 +26,7 @@ export const NiceSimpleCaptcha = (
       inputClassName={inputClassName}
       onCaptchaValidate={(passed, messageCode) => onCaptchaValidate(passed, messageCode)}
       onEnterPressed={() => onEnterPressed()}
-      darkMode={darkMode}
+      blackScreen={blackScreen}
       characters={characters}
       length={Number(length)}
       crossLine={crossLine}
