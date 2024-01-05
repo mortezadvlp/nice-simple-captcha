@@ -28,12 +28,12 @@ function Example() {
     <NiceSimpleCaptcha
       className={''}
       inputClassName={''}
-      darkMode={false}
+      blackScreen={false}
       characters={'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789'}
       length={5}
       crossLine={true}
       expireAfterSec={60}
-      style={{}}
+      style={{width: '200px'}}
       onCaptchaValidate={(passed, messageCode) => captchaValidate(passed, messageCode)}
       onEnterPressed={() => onEnterPressed()}
     />
@@ -62,9 +62,9 @@ function Example() {
       <td>Apply your desire class for input component</td>
     </tr>
     <tr>
-      <td>darkMode</td>
+      <td>blackScreen</td>
       <td>boolean</td>
-      <td>Switch visual mode to dark/light</td>
+      <td>Screen has black background or white</td>
     </tr>
     <tr>
       <td>characters</td>
