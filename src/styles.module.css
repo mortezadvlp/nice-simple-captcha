@@ -346,6 +346,22 @@
     flex-direction: column-reverse !important;
 }
 
+.flexGrow0 {
+    flex-grow: 0 !important;
+}
+
+.flexGrow1 {
+    flex-grow: 1 !important;
+}
+
+.flexShrink0 {
+    flex-shrink: 0 !important;
+}
+
+.flexShrink1 {
+    flex-shrink: 1 !important;
+}
+
 .positionStatic {
     position: static !important;
 }
@@ -690,9 +706,19 @@
 }
 
 
+.alignMiddle {
+    vertical-align: middle !important;
+}
+  
+
+
 /*======= From mine =============*/
 
 .captchaCharacters {
     width: 100%;
-    height: 50px;
+    height: 37px;
+}
+
+.cursorPointer {
+    cursor: pointer !important;
 }

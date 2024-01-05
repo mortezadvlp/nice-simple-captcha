@@ -31,17 +31,17 @@ const App = () => {
   }
 
   return (
-    <div >
+    <div style={{padding: '10px'}} >
       <div >
         <div >
           <span >Screen Color</span>
-          <select value={blackScreen} onChange={(e) => setBlackScreen(e.target.value)} >
-            <option value={false} >White</option>
-            <option value={true} >Black</option>
+          <select value={blackScreen ? '1' : '0'} onChange={(e) => setBlackScreen(e.target.value === '1')} >
+            <option value='0' >White</option>
+            <option value='1' >Black</option>
           </select>
         </div>
         <div >
-          <input type='checkbox' value={line} onChange={(e) => setLine(e.target.value)} />
+          <input type='checkbox' checked={line} onChange={(e) => setLine(e.target.checked)} />
           <span >Cross Line</span>
         </div>
         <div >
@@ -53,9 +53,8 @@ const App = () => {
           <input type='number' value={validDur} onChange={(e) => setValidDur(e.target.value)} min='30' max='600' />
         </div>
         <p >Captcha Validation Status:</p>
-        <p >Passed: {result.passed}</p>
-        <p >Message:</p>
-        <p >{`${result.messageCode} => ${message}`}</p>
+        <p >Passed: {result.passed ? 'Yes' : 'No'}</p>
+        <p >Message: {`${result.messageCode} => ${message}`}</p>
       </div>
 
       <NiceSimpleCaptcha
