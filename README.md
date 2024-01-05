@@ -10,20 +10,105 @@
 npm install --save nice-simple-captcha
 ```
 
+## Online Demo
+
+Visit this link:
+[https://simacoders.ir/features/#NiceSimpleCaptcha](https://simacoders.ir/features/#NiceSimpleCaptcha)
+
 ## Usage
 
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'nice-simple-captcha'
+import {NiceSimpleCaptcha} from 'nice-simple-captcha'
 import 'nice-simple-captcha/dist/index.css'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+function Example() {
+  return (
+    <NiceSimpleCaptcha
+      className={''}
+      inputClassName={''}
+      darkMode={false}
+      characters={'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789'}
+      length={5}
+      crossLine={true}
+      expireAfterSec={60}
+      style={{}}
+      onCaptchaValidate={(passed, messageCode) => captchaValidate(passed, messageCode)}
+      onEnterPressed={() => onEnterPressed()}
+    />
+  )
 }
 ```
+
+### General properties
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>className</td>
+      <td>string</td>
+      <td>Apply your desire class globally</td>
+    </tr>
+    <tr>
+      <td>inputClassName</td>
+      <td>string</td>
+      <td>Apply your desire class for input component</td>
+    </tr>
+    <tr>
+      <td>darkMode</td>
+      <td>boolean</td>
+      <td>Switch visual mode to dark/light</td>
+    </tr>
+    <tr>
+      <td>characters</td>
+      <td>string</td>
+      <td>Acceptable characters for shwing in the captcha</td>
+    </tr>
+    <tr>
+      <td>length</td>
+      <td>number</td>
+      <td>Number of characters in the captcha</td>
+    </tr>
+    <tr>
+      <td>crossLine</td>
+      <td>boolean</td>
+      <td>Captcha has a cross line over characters or not</td>
+    </tr>
+    <tr>
+      <td>expireAfterSec</td>
+      <td>number</td>
+      <td>Duration that the captcha is valid since it is generated (in sec)</td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td>object</td>
+      <td>Apply your desire style globally</td>
+    </tr>
+    <tr>
+      <td>onCaptchaValidate</td>
+      <td>function</td>
+      <td>Call on input changes. It returns two parameters: (validation result: boolean, validation message code: number)*</td>
+    </tr>
+    <tr>
+      <td>onEnterPressed</td>
+      <td>function</td>
+      <td>Call when user press enter key on input.</td>
+    </tr>
+  </tbody>
+</table>
+*: Validation message codes are available from:
+
+```jsx
+import { CAPTCHA_OK, CAPTCHA_LOAD_ERROR, CAPTCHA_EMPTY_ERROR, CAPTCHA_MISMATCH_ERROR, CAPTCHA_EXPIRED } from 'nice-simple-captcha';
+```
+
 
 ## License
 
