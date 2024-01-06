@@ -1,6 +1,6 @@
 {
   "name": "nice-simple-captcha",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Simple Captcha",
   "author": "mortezadvlp",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^18.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
