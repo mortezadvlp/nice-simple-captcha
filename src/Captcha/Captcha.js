@@ -96,9 +96,9 @@ export default function Captcha( {
     }
 
     return (
-        <div className={`${styles.dFlex} ${styles.flexColumn} ${styles.gap2} ${className}`} style={style} >
+        <div className={`${styles.all} ${styles.dFlex} ${styles.flexColumn} ${styles.gap2} ${className}`} style={style} >
             <div className={`${styles.positionRelative} ${styles.border} ${styles.border1} ${styles.borderBlack}`} >
-                <div ref={captchaRef} dir='ltr' className={`${styles.captchaCharacters} ${blackScreen ? styles.bgBlack : styles.bgWhite} ${styles.dFlex} ${styles.flexRow} ${styles.justifyContentEvenly} ${styles.py3} ${styles.positionRelative}`} >
+                <div ref={captchaRef} dir='ltr' className={`${styles.captchaCharacters} ${blackScreen ? styles.bgBlack : styles.bgWhite} ${styles.dFlex} ${styles.flexRow} ${styles.justifyContentEvenly} ${styles.py2_5} ${styles.positionRelative}`} >
                     {captchaChars.map((char, index) =>
                         <span key={index} className={`${blackScreen ? styles.textWhite : styles.textBlack}`} 
                             style={{
@@ -109,8 +109,8 @@ export default function Captcha( {
                                 }}
                         >{char.ch}</span>
                     )}
-                    {crossLine &&
-                    <div className={`${styles.borderBottom} ${blackScreen ? styles.borderLight : styles.borderDark} ${styles.border2} ${styles.positionAbsolute} ${styles.top50}`} style={{width: '90%'}} ></div>
+                    {(crossLine && captchaChars.length > 0) &&
+                    <div className={`${styles.borderBottom} ${blackScreen ? styles.borderWhite : styles.borderBlack} ${styles.border2} ${styles.positionAbsolute} ${styles.top50}`} style={{width: '90%'}} ></div>
                     }
                 </div>
                 <div className={`${styles.w100} ${styles.positionAbsolute} ${styles.top0} ${styles.start0}`} ><img src={img} /></div>
