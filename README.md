@@ -26,12 +26,15 @@ function Example() {
     <NiceSimpleCaptcha
       className={''}
       inputClassName={''}
-      blackScreen={false}
+      screenColor='white'
+      screenBorderColor='black'
+      captchaColor='black'
       characters={'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789'}
       length={5}
       crossLine={true}
       expireAfterSec={60}
       style={{width: '200px'}}
+      refreshButtonIcon = {null}
       onCaptchaValidate={(passed, messageCode) => captchaValidate(passed, messageCode)}
       onEnterPressed={() => onEnterPressed()}
     />
@@ -59,12 +62,6 @@ function Example() {
       <td>string</td>
       <td>Apply your desire class for input component</td>
     </tr>
-    <tr>
-      <td>blackScreen</td>
-      <td>boolean</td>
-      <td>Screen has black background or white</td>
-    </tr>
-    <tr>
       <td>characters</td>
       <td>string</td>
       <td>Acceptable characters for showing in the captcha</td>
@@ -78,6 +75,21 @@ function Example() {
       <td>crossLine</td>
       <td>boolean</td>
       <td>Captcha has a cross line over characters or not</td>
+    </tr>
+    <tr>
+      <td>screenColor</td>
+      <td>String</td>
+      <td>Captcha Screen Color</td>
+    </tr>
+    <tr>
+      <td>screenBorderColor</td>
+      <td>String</td>
+      <td>Captcha Screen Border Color</td>
+    </tr>
+    <tr>
+      <td>captchaColor</td>
+      <td>String</td>
+      <td>Captcha Text Color</td>
     </tr>
     <tr>
       <td>expireAfterSec</td>

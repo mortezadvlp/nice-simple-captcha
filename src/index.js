@@ -11,7 +11,9 @@ export const NiceSimpleCaptcha = (
     {
       className = '',
       inputClassName = '',
-      blackScreen = false,
+      screenColor = 'white',
+      screenBorderColor = 'black',
+      captchaColor = 'black',
       characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789',
       length = 5,
       crossLine = true,
@@ -27,7 +29,9 @@ export const NiceSimpleCaptcha = (
       inputClassName={inputClassName}
       onCaptchaValidate={(passed, messageCode) => onCaptchaValidate(passed, messageCode)}
       onEnterPressed={() => onEnterPressed()}
-      blackScreen={blackScreen}
+      screenColor={screenColor}
+      screenBorderColor={screenBorderColor}
+      captchaColor={captchaColor}
       characters={characters}
       length={Number(length)}
       crossLine={crossLine}

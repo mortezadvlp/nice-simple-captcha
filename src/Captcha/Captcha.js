@@ -11,7 +11,9 @@ export default function Captcha( {
         inputClassName = '',
         characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789',
         length = 5,
-        blackScreen = false,
+        screenColor = 'white',
+        screenBorderColor = 'black',
+        captchaColor = 'black',
         crossLine = true,
         expireAfterSec = 60,
         onCaptchaValidate = (passed, messageCode) => {},
@@ -47,7 +49,7 @@ export default function Captcha( {
         setTimeout(() => {
             createCaptchaChars();
         }, 500);
-    }, [characters, length, crossLine, blackScreen])
+    }, [characters, length, crossLine, screenColor, captchaColor])
 
     useEffect(() => {
         if (captchaChars.length > 0) {
@@ -98,32 +100,33 @@ export default function Captcha( {
 
     return (
         <div className={`${styles.all} ${styles.dFlex} ${styles.flexColumn} ${styles.gap2} ${className}`} style={style} >
-            <div className={`${styles.positionRelative} ${styles.border} ${styles.border1} ${styles.borderBlack}`} >
-                <div ref={captchaRef} dir='ltr' className={`${styles.captchaCharacters} ${blackScreen ? styles.bgBlack : styles.bgWhite} ${styles.dFlex} ${styles.flexRow} ${styles.justifyContentEvenly} ${styles.py2_5} ${styles.positionRelative}`} >
+            <div className={`${styles.positionRelative} ${styles.border} ${styles.border1}`} ref={el => el && el.style.setProperty('border-color', screenBorderColor, 'important')} >
+                <div ref={captchaRef} dir='ltr' className={`${styles.captchaCharacters} ${styles.dFlex} ${styles.flexRow} ${styles.justifyContentEvenly} ${styles.py2_5} ${styles.positionRelative}`} style={{backgroundColor: screenColor}} >
                     {captchaChars.map((char, index) =>
-                        <span key={index} className={`${blackScreen ? styles.textWhite : styles.textBlack}`} 
+                        <span key={index} 
                             style={{
                                     scale: char.scale,
                                     fontWeight: char.fontWeight,
                                     rotate: `${char.rotate}deg`,
-                                    alignSelf: char.align
+                                    alignSelf: char.align,
+                                    color: captchaColor,
                                 }}
                         >{char.ch}</span>
                     )}
                     {(crossLine && captchaChars.length > 0) &&
-                    <div className={`${styles.borderBottom} ${blackScreen ? styles.borderWhite : styles.borderBlack} ${styles.border2} ${styles.positionAbsolute} ${styles.top50}`} style={{width: '90%'}} ></div>
+                    <div className={`${styles.borderBottom} ${styles.border2} ${styles.positionAbsolute} ${styles.top50}`} style={{width: '90%'}} ref={el => el && el.style.setProperty('border-color', captchaColor, 'important')} ></div>
                     }
                 </div>
                 <div className={`${styles.w100} ${styles.positionAbsolute} ${styles.top0} ${styles.start0}`} ><img src={img} /></div>
             </div>
             <div className={`${styles.w100} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCenter} ${styles.justifyContentCenter} ${styles.gap1}`} >
                 <input dir='ltr' className={`${styles.w100} ${styles.py1} ${styles.noOutline} ${inputClassName}`} value={inputCaptcha.value} onChange={(e) => {const val = e.target.value; setInputCaptcha(s => ({...s, value: val}))}} onKeyDown={(e) => onEnterCaptured(e.key)} />
-                <button className={`${styles.lead} ${styles.textBlack} ${styles.bgTransparent} ${styles.border0} ${styles.p0} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCenter} ${styles.cursorPointer}`} onClick={() => createCaptchaChars()} >
+                <button className={`${styles.bgTransparent} ${styles.border0} ${styles.p0} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCenter} ${styles.cursorPointer}`} onClick={() => createCaptchaChars()} >
                     {refreshButtonIcon
                     ?
-                        {refreshButtonIcon}
+                        refreshButtonIcon
                     :
-                        <ArrowClockwise />
+                        <ArrowClockwise className={`${styles.lead} ${styles.textBlack}`} />
                     }
                 </button>
             </div>

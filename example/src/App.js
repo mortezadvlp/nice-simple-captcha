@@ -5,7 +5,9 @@ import 'nice-simple-captcha/dist/index.css'
 
 const App = () => {
   const [result, setResult] = useState({passed: false, messageCode: 0});
-  const [blackScreen, setBlackScreen] = useState(false);
+  const [screenColor, setScreenColor] = useState('#ffffff');
+  const [screenBorderColor, setScreenBorderColor] = useState('#000000');
+  const [captchaColor, setCaptchaColor] = useState('#000000');
   const [len, setLen] = useState(5);
   const [line, setLine] = useState(true);
   const [validDur, setValidDur] = useState(60);
@@ -35,10 +37,15 @@ const App = () => {
       <div >
         <div >
           <span >Screen Color</span>
-          <select value={blackScreen ? '1' : '0'} onChange={(e) => setBlackScreen(e.target.value === '1')} >
-            <option value='0' >White</option>
-            <option value='1' >Black</option>
-          </select>
+          <input type='color' value={screenColor} onChange={e => setScreenColor(e.target.value)} />
+        </div>
+        <div >
+          <span >Screen Border Color</span>
+          <input type='color' value={screenBorderColor} onChange={e => setScreenBorderColor(e.target.value)} />
+        </div>
+        <div >
+          <span >Captcha Color</span>
+          <input type='color' value={captchaColor} onChange={e => setCaptchaColor(e.target.value)} />
         </div>
         <div >
           <input type='checkbox' checked={line} onChange={(e) => setLine(e.target.checked)} />
@@ -60,7 +67,9 @@ const App = () => {
       <NiceSimpleCaptcha
         className={''}
         inputClassName={''}
-        blackScreen={blackScreen}
+        screenColor={screenColor}
+        screenBorderColor={screenBorderColor}
+        captchaColor={captchaColor}
         characters={'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789'}
         length={len}
         crossLine={line}
