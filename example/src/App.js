@@ -68,6 +68,7 @@ const App = () => {
         style={{width: '200px'}}
         onCaptchaValidate={(passed, messageCode) => captchaValidate(passed, messageCode)}
         onEnterPressed={() => onEnterPressed()}
+        refreshButtonIcon = {null}
       />
     </div>
     

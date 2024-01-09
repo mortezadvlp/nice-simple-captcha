@@ -18,8 +18,6 @@ Visit this link:
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
-
 import {NiceSimpleCaptcha} from 'nice-simple-captcha'
 import 'nice-simple-captcha/dist/index.css'
 
@@ -69,7 +67,7 @@ function Example() {
     <tr>
       <td>characters</td>
       <td>string</td>
-      <td>Acceptable characters for shwing in the captcha</td>
+      <td>Acceptable characters for showing in the captcha</td>
     </tr>
     <tr>
       <td>length</td>
@@ -90,6 +88,11 @@ function Example() {
       <td>style</td>
       <td>object</td>
       <td>Apply your desire style globally</td>
+    </tr>
+    <tr>
+      <td>refreshButtonIcon</td>
+      <td>Component</td>
+      <td>An icon for refresh button. If null, a simple clockwise arrow is shown.</td>
     </tr>
     <tr>
       <td>onCaptchaValidate</td>

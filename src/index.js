@@ -18,7 +18,8 @@ export const NiceSimpleCaptcha = (
       expireAfterSec = 60,
       onCaptchaValidate = (passed, messageCode) => {},
       onEnterPressed = () => {},
-      style={}
+      style={},
+      refreshButtonIcon = null,
     }) => {
   return (
     <Captcha 
@@ -32,6 +33,7 @@ export const NiceSimpleCaptcha = (
       crossLine={crossLine}
       expireAfterSec={Number(expireAfterSec)}
       style={style}
+      refreshButtonIcon={refreshButtonIcon}
     />
   )
 }
