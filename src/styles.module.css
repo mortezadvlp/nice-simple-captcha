@@ -1,553 +1,580 @@
 /*======== From Bootstrap ==============*/
-.all * {
-    box-sizing: border-box !important;
+.all * { 
+    box-sizing: border-box;
 }
 
-.p0 {
-    padding: 0 !important;
+.p0 { 
+    padding: 0;
 }
 
-.p1 {
-    padding: 0.25rem !important;
+.p1 { 
+    padding: 0.25rem;
 }
 
-.p2 {
-    padding: 0.5rem !important;
+.p2 { 
+    padding: 0.5rem;
 }
 
-.p3 {
-    padding: 1rem !important;
+.p3 { 
+    padding: 1rem;
 }
 
-.p4 {
-    padding: 1.5rem !important;
+.p4 { 
+    padding: 1.5rem;
 }
 
-.p5 {
-    padding: 3rem !important;
+.p5 { 
+    padding: 3rem;
 }
 
-.px0 {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
+.px0 { 
+    padding-right: 0; 
+    padding-left: 0; 
 }
 
-.px1 {
-    padding-right: 0.25rem !important;
-    padding-left: 0.25rem !important;
+.px1 { 
+    padding-right: 0.25rem; 
+    padding-left: 0.25rem; 
 }
 
-.px2 {
-    padding-right: 0.5rem !important;
-    padding-left: 0.5rem !important;
+.px2 { 
+    padding-right: 0.5rem; 
+    padding-left: 0.5rem; 
 }
 
-.px3 {
-    padding-right: 1rem !important;
-    padding-left: 1rem !important;
+.px3 { 
+    padding-right: 1rem; 
+    padding-left: 1rem; 
 }
 
-.px4 {
-    padding-right: 1.5rem !important;
-    padding-left: 1.5rem !important;
+.px4 { 
+    padding-right: 1.5rem; 
+    padding-left: 1.5rem; 
 }
 
-.px5 {
-    padding-right: 3rem !important;
-    padding-left: 3rem !important;
+.px5 { 
+    padding-right: 3rem; 
+    padding-left: 3rem; 
 }
 
-.py0 {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+.py0 { 
+    padding-top: 0; 
+    padding-bottom: 0; 
 }
 
-.py1 {
-    padding-top: 0.25rem !important;
-    padding-bottom: 0.25rem !important;
+.py1 { 
+    padding-top: 0.25rem; 
+    padding-bottom: 0.25rem; 
 }
 
-.py2 {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
+.py2 { 
+    padding-top: 0.5rem; 
+    padding-bottom: 0.5rem; 
 }
 
-.py2_5 {
-    padding-top: 0.75rem !important;
-    padding-bottom: 0.75rem !important;
+.py2_5 { 
+    padding-top: 0.75rem; 
+    padding-bottom: 0.75rem; 
 }
 
-.py3 {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
+.py3 { 
+    padding-top: 1rem; 
+    padding-bottom: 1rem; 
 }
 
-.py4 {
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
+.py4 { 
+    padding-top: 1.5rem; 
+    padding-bottom: 1.5rem; 
 }
 
-.py5 {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
+.py5 { 
+    padding-top: 3rem; 
+    padding-bottom: 3rem; 
 }
 
-.pt0 {
-    padding-top: 0 !important;
+.pt0 { 
+    padding-top: 0; 
 }
 
-.pt1 {
-    padding-top: 0.25rem !important;
+.pt1 { 
+    padding-top: 0.25rem; 
 }
 
-.pt2 {
-    padding-top: 0.5rem !important;
+.pt2 { 
+    padding-top: 0.5rem; 
 }
 
-.pt3 {
-    padding-top: 1rem !important;
+.pt3 { 
+    padding-top: 1rem; 
 }
 
-.pt4 {
-    padding-top: 1.5rem !important;
+.pt4 { 
+    padding-top: 1.5rem; 
 }
 
-.pt5 {
-    padding-top: 3rem !important;
+.pt5 { 
+    padding-top: 3rem; 
 }
 
-.pe0 {
-    padding-right: 0 !important;
+.pe0 { 
+    padding-right: 0; 
 }
 
-.pe1 {
-    padding-right: 0.25rem !important;
+.pe1 { 
+    padding-right: 0.25rem; 
 }
 
-.pe2 {
-    padding-right: 0.5rem !important;
+.pe2 { 
+    padding-right: 0.5rem; 
 }
 
-.pe3 {
-    padding-right: 1rem !important;
+.pe3 { 
+    padding-right: 1rem; 
 }
 
-.pe4 {
-    padding-right: 1.5rem !important;
+.pe4 { 
+    padding-right: 1.5rem; 
 }
 
-.pe5 {
-    padding-right: 3rem !important;
+.pe5 { 
+    padding-right: 3rem; 
 }
 
-.pb0 {
-    padding-bottom: 0 !important;
+.pb0 { 
+    padding-bottom: 0; 
 }
 
-.pb1 {
-    padding-bottom: 0.25rem !important;
+.pb1 { 
+    padding-bottom: 0.25rem;
 }
 
-.pb2 {
-    padding-bottom: 0.5rem !important;
+.pb2 { 
+    padding-bottom: 0.5rem; 
 }
 
-.pb3 {
-    padding-bottom: 1rem !important;
+.pb3 { 
+    padding-bottom: 1rem; 
 }
 
-.pb4 {
-    padding-bottom: 1.5rem !important;
+.pb4 { 
+    padding-bottom: 1.5rem; 
 }
 
-.pb5 {
-    padding-bottom: 3rem !important;
+.pb5 { 
+    padding-bottom: 3rem; 
 }
 
-.ps0 {
-    padding-left: 0 !important;
+.ps0 { 
+    padding-left: 0; 
 }
 
-.ps1 {
-    padding-left: 0.25rem !important;
+.ps1 { 
+    padding-left: 0.25rem; 
 }
 
-.ps2 {
-    padding-left: 0.5rem !important;
+.ps2 { 
+    padding-left: 0.5rem; 
 }
 
-.ps3 {
-    padding-left: 1rem !important;
+.ps3 { 
+    padding-left: 1rem; 
 }
 
-.ps4 {
-    padding-left: 1.5rem !important;
+.ps4 { 
+    padding-left: 1.5rem; 
 }
 
-.ps5 {
-    padding-left: 3rem !important;
+.ps5 { 
+    padding-left: 3rem; 
 }
 
-
-.gap0 {
-    gap: 0 !important;
+.gap0 { 
+    gap: 0; 
 }
 
-.gap1 {
-    gap: 0.25rem !important;
+.gap1 { 
+    gap: 0.25rem; 
 }
 
-.gap2 {
-    gap: 0.5rem !important;
+.gap2 { 
+    gap: 0.5rem; 
 }
 
-.gap3 {
-    gap: 1rem !important;
+.gap3 { 
+    gap: 1rem; 
 }
 
-.gap4 {
-    gap: 1.5rem !important;
+.gap4 { 
+    gap: 1.5rem; 
 }
 
-.gap5 {
-    gap: 3rem !important;
+.gap5 { 
+    gap: 3rem; 
 }
 
-.dFlex {
-    display: flex !important;
+.dFlex { 
+    display: -webkit-box;
+    display: flex; 
 }
 
-.flexRow {
-    flex-direction: row !important;
+.flexRow { 
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row; 
 }
 
-.flexColumn {
-    flex-direction: column !important;
+.flexColumn { 
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column; 
 }
 
-.flexRowReverse {
-    flex-direction: row-reverse !important;
+.flexRowReverse { 
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    flex-direction: row-reverse; 
 }
 
-.flexColumnReverse {
-    flex-direction: column-reverse !important;
+.flexColumnReverse { 
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    flex-direction: column-reverse; 
 }
 
-.flexGrow0 {
-    flex-grow: 0 !important;
+.flexGrow0 { 
+    -webkit-box-flex: 0;
+    flex-grow: 0; 
 }
 
-.flexGrow1 {
-    flex-grow: 1 !important;
+.flexGrow1 { 
+    -webkit-box-flex: 1;
+    flex-grow: 1; 
 }
 
-.flexShrink0 {
-    flex-shrink: 0 !important;
+.flexShrink0 { 
+    flex-shrink: 0; 
 }
 
-.flexShrink1 {
-    flex-shrink: 1 !important;
+.flexShrink1 { 
+    flex-shrink: 1; 
 }
 
-.positionStatic {
-    position: static !important;
+.positionStatic { 
+    position: static; 
 }
 
-.positionRelative {
-    position: relative !important;
+.positionRelative { 
+    position: relative; 
 }
 
-.positionAbsolute {
-    position: absolute !important;
+.positionAbsolute { 
+    position: absolute; 
 }
 
-.positionFixed {
-    position: fixed !important;
+.positionFixed { 
+    position: fixed; 
 }
 
-.positionSticky {
-    position: -webkit-sticky !important;
-    position: sticky !important;
+.positionSticky { 
+    position: -webkit-sticky; 
+    position: sticky; 
 }
 
-.bgBlack {
-    background-color: #000 !important;
+.bgBlack { 
+    background-color: #000; 
 }
 
-.bgWhite {
-    background-color: #fff !important;
+.bgWhite { 
+    background-color: #fff; 
 }
 
-.bgTransparent {
-    background-color: transparent !important;
+.bgTransparent { 
+    background-color: transparent; 
 }
 
-.border {
-    border: 1px solid #dee2e6 !important;
+.border { 
+    border: 1px solid #dee2e6; 
 }
 
-.border0 {
-    border: 0 !important;
+.border0 { 
+    border: 0; 
 }
 
-.borderTop {
-    border-top: 1px solid #dee2e6 !important;
+.borderTop { 
+    border-top: 1px solid #dee2e6; 
 }
 
-.borderTop0 {
-    border-top: 0 !important;
+.borderTop0 { 
+    border-top: 0; 
 }
 
-.borderEnd {
-    border-right: 1px solid #dee2e6 !important;
+.borderEnd { 
+    border-right: 1px solid #dee2e6; 
 }
 
-.borderEnd0 {
-    border-right: 0 !important;
+.borderEnd0 { 
+    border-right: 0; 
 }
 
-.borderBottom {
-    border-bottom: 1px solid #dee2e6 !important;
+.borderBottom { 
+    border-bottom: 1px solid #dee2e6; 
 }
 
-.borderBottom0 {
-    border-bottom: 0 !important;
+.borderBottom0 { 
+    border-bottom: 0; 
 }
 
-.borderStart {
-    border-left: 1px solid #dee2e6 !important;
+.borderStart { 
+    border-left: 1px solid #dee2e6; 
 }
 
-.borderStart0 {
-    border-left: 0 !important;
+.borderStart0 { 
+    border-left: 0; 
 }
 
-.borderBlack {
-    border-color: #000 !important;
+.borderBlack { 
+    border-color: #000; 
 }
 
-.borderWhite {
-    border-color: #fff !important;
+.borderWhite { 
+    border-color: #fff; 
 }
 
-.border1 {
-    border-width: 1px !important;
+.border1 { 
+    border-width: 1px; 
 }
 
-.border2 {
-    border-width: 2px !important;
+.border2 { 
+    border-width: 2px; 
 }
 
-.border3 {
-    border-width: 3px !important;
+.border3 { 
+    border-width: 3px; 
 }
 
-.border4 {
-    border-width: 4px !important;
+.border4 { 
+    border-width: 4px; 
 }
 
-.border5 {
-    border-width: 5px !important;
+.border5 { 
+    border-width: 5px; 
 }
 
-.textStart {
-    text-align: left !important;
+.textStart { 
+    text-align: left; 
 }
 
-.textEnd {
-    text-align: right !important;
+.textEnd { 
+    text-align: right; 
 }
 
-.textCenter {
-    text-align: center !important;
+.textCenter { 
+    text-align: center; 
 }
 
-.textBlack {
-    color: #000 !important;
+.textBlack { 
+    color: #000; 
 }
 
-.textWhite {
-    color: #fff !important;
+.textWhite { 
+    color: #fff; 
 }
 
-.justifyContentStart {
-    justify-content: flex-start !important;
+.justifyContentStart { 
+    -webkit-box-pack: start;
+    justify-content: flex-start; 
 }
 
-.justifyContentEnd {
-    justify-content: flex-end !important;
+.justifyContentEnd { 
+    -webkit-box-pack: end;
+    justify-content: flex-end; 
 }
 
-.justifyContentCenter {
-    justify-content: center !important;
+.justifyContentCenter { 
+    -webkit-box-pack: center;
+    justify-content: center; 
 }
 
-.justifyContentBetween {
-    justify-content: space-between !important;
+.justifyContentBetween { 
+    -webkit-box-pack: justify;
+    justify-content: space-between; 
 }
 
-.justifyContentAround {
-    justify-content: space-around !important;
+.justifyContentAround { 
+    -webkit-box-pack: distribute;
+    justify-content: space-around; 
 }
 
-.justifyContentEvenly {
-    justify-content: space-evenly !important;
+.justifyContentEvenly { 
+    -webkit-box-pack: space-evenly;
+    justify-content: space-evenly; 
 }
 
-.alignItemsStart {
-    align-items: flex-start !important;
+.alignItemsStart { 
+    -webkit-box-align: start;
+    align-items: flex-start; 
 }
 
-.alignItemsEnd {
-    align-items: flex-end !important;
+.alignItemsEnd { 
+    -webkit-box-align: end;
+    align-items: flex-end; 
 }
 
-.alignItemsCenter {
-    align-items: center !important;
+.alignItemsCenter { 
+    -webkit-box-align: center;
+    align-items: center; 
 }
 
-.alignItemsBaseline {
-    align-items: baseline !important;
+.alignItemsBaseline { 
+    -webkit-box-align: baseline;
+    align-items: baseline; 
 }
 
-.alignItemsStretch {
-    align-items: stretch !important;
+.alignItemsStretch { 
+    -webkit-box-align: stretch;
+    align-items: stretch; 
 }
 
 .alignContentStart {
-    align-content: flex-start !important;
+    align-content: flex-start;
+    align-content: -webkit-flex-start;
 }
 
 .alignContentEnd {
-    align-content: flex-end !important;
+    align-content: flex-end;
+    align-content: -webkit-flex-end;
 }
 
 .alignContentCenter {
-    align-content: center !important;
+    align-content: center;
+    align-content: -webkit-center;
 }
 
 .alignContentBetween {
-    align-content: space-between !important;
+    align-content: space-between;
+    align-content: -webkit-space-between;
 }
 
 .alignContentAround {
-    align-content: space-around !important;
+    align-content: space-around;
+    align-content: -webkit-space-around;
 }
 
 .alignContentStretch {
-    align-content: stretch !important;
+    align-content: stretch;
+    align-content: -webkit-stretch;
 }
 
 .top0 {
-    top: 0 !important;
+    top: 0;
 }
 
 .top50 {
-    top: 50% !important;
+    top: 50%;
 }
 
 .top100 {
-    top: 100% !important;
+    top: 100%;
 }
 
 .bottom0 {
-    bottom: 0 !important;
+    bottom: 0;
 }
 
 .bottom50 {
-    bottom: 50% !important;
+    bottom: 50%;
 }
 
 .bottom100 {
-    bottom: 100% !important;
+    bottom: 100%;
 }
 
 .start0 {
-    left: 0 !important;
+    left: 0;
 }
 
 .start50 {
-    left: 50% !important;
+    left: 50%;
 }
 
 .start100 {
-    left: 100% !important;
+    left: 100%;
 }
 
 .end0 {
-    right: 0 !important;
+    right: 0;
 }
 
 .end50 {
-    right: 50% !important;
+    right: 50%;
 }
 
 .end100 {
-    right: 100% !important;
+    right: 100%;
 }
 
 .w25 {
-    width: 25% !important;
+    width: 25%;
 }
 
 .w50 {
-    width: 50% !important;
+    width: 50%;
 }
 
 .w75 {
-    width: 75% !important;
+    width: 75%;
 }
 
 .w100 {
-    width: 100% !important;
+    width: 100%;
 }
 
 .wauto {
-    width: auto !important;
+    width: auto;
 }
 
 .mw100 {
-    max-width: 100% !important;
+    max-width: 100%;
 }
 
 .vw100 {
-    width: 100vw !important;
+    width: 100vw;
 }
 
 .minVw100 {
-    min-width: 100vw !important;
+    min-width: 100vw;
 }
 
 .h25 {
-    height: 25% !important;
+    height: 25%;
 }
 
 .h50 {
-    height: 50% !important;
+    height: 50%;
 }
 
 .h75 {
-    height: 75% !important;
+    height: 75%;
 }
 
 .h100 {
-    height: 100% !important;
+    height: 100%;
 }
 
 .hAuto {
-    height: auto !important;
+    height: auto;
 }
 
 .mh100 {
-    max-height: 100% !important;
+    max-height: 100%;
 }
 
 .vh100 {
-    height: 100vh !important;
+    height: 100vh;
 }
 
 .minVh100 {
-    min-height: 100vh !important;
+    min-height: 100vh;
 }
 
 .lead {
@@ -557,10 +584,9 @@
 
 
 .alignMiddle {
-    vertical-align: middle !important;
+    vertical-align: middle;
+    vertical-align: -webkit-middle;
 }
-  
-
 
 /*======= From mine =============*/
 
@@ -570,16 +596,20 @@
 }
 
 .cursorPointer {
-    cursor: pointer !important;
+    cursor: pointer;
 }
 
 .noOutline {
-    outline: none !important;
+    outline: none;
 }
 
 .flexCenter {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: center !important;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
 }
