@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Captcha from './Captcha/Captcha'
 
 export const CAPTCHA_OK             =  0;
@@ -23,8 +23,15 @@ export const NiceSimpleCaptcha = (
       style={},
       refreshButtonIcon = null,
     }) => {
+
+  const innerCaptcha = useRef(null);
+
+  const resetCaptcha = () => {
+    innerCaptcha.current.resetCaptcha();
+  }
+
   return (
-    <Captcha 
+    <Captcha ref={innerCaptcha} 
       className={className}
       inputClassName={inputClassName}
       onCaptchaValidate={(passed, messageCode) => onCaptchaValidate(passed, messageCode)}
