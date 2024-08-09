@@ -44,15 +44,15 @@ export default function Captcha( {
         else if (inputCaptcha.value === '') {
             onCaptchaValidate(false, CAPTCHA_EMPTY_ERROR);
         }
-        else if ((caseSensetivee && inputCaptcha.captcha !== inputCaptcha.value) ||
-                (!caseSensetivee && inputCaptcha.captcha.toLowerCase() !== inputCaptcha.value.toLowerCase()))  {
-            onCaptchaValidate(false, CAPTCHA_MISMATCH_ERROR);
-        }
         else if ((Date.now() - inputCaptcha.generateTime) > (expireAfterSec * 1000)) {
             onCaptchaValidate(false, CAPTCHA_EXPIRED);
         }
+        else if ((caseSensetivee && inputCaptcha.captcha === inputCaptcha.value) ||
+                (!caseSensetivee && inputCaptcha.captcha.toLowerCase() === inputCaptcha.value.toLowerCase()))  {
+            onCaptchaValidate(false, CAPTCHA_OK);
+        }
         else {
-            onCaptchaValidate(true, CAPTCHA_OK);
+            onCaptchaValidate(true, CAPTCHA_MISMATCH_ERROR);
         }
     }, [inputCaptcha])
 
