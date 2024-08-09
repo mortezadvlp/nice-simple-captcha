@@ -24,11 +24,7 @@ export const NiceSimpleCaptcha = (
       refreshButtonIcon = null,
     }) => {
 
-  const innerCaptcha = useRef(null);
-
-  const resetCaptcha = () => {
-    innerCaptcha.current.resetCaptcha();
-  }
+  const innerCaptcha = useRef();
 
   return (
     <Captcha ref={innerCaptcha} 
