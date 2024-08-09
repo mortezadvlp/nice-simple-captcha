@@ -22,6 +22,10 @@ export default function Captcha( {
         refreshButtonIcon = null,
     } ) {
 
+    const resetCaptcha = () => {
+        createCaptchaChars(null);
+    }
+
     const [captchaChars, setCaptchaChars] = useState([]);
     const [inputCaptcha, setInputCaptcha] = useState({captcha: '', value: '', generateTime: 0});
     const captchaRef = useRef(null);
@@ -69,7 +73,7 @@ export default function Captcha( {
         if (e !== null) {
             e.preventDefault();
         }
-        
+
         setCaptchaChars([]);
 
         const scales = ['1.3', '1.45', '1.6', '1.75'];
