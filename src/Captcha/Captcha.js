@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useImperativeHandle } from 'react';
 import { ArrowClockwise } from 'react-bootstrap-icons';
 import { useRef } from 'react';
 import { toPng } from 'html-to-image';
@@ -30,6 +30,10 @@ export default function Captcha( {
     const [inputCaptcha, setInputCaptcha] = useState({captcha: '', value: '', generateTime: 0});
     const captchaRef = useRef(null);
     const [img, setImg] = useState('');
+
+    useImperativeHandle(captchaRef, () => ({
+        resetCaptcha,
+    }))
 
     useEffect(() => {
         if (inputCaptcha.captcha === '') {
