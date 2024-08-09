@@ -26,6 +26,10 @@ export const NiceSimpleCaptcha = (
 
   const innerCaptcha = useRef();
 
+  const resetCaptcha = () => {
+    innerCaptcha.current.resetCaptcha();;
+  }
+
   return (
     <Captcha refs={innerCaptcha} 
       className={className}
