@@ -49,10 +49,10 @@ export default function Captcha( {
         }
         else if ((caseSensetivee && inputCaptcha.captcha === inputCaptcha.value) ||
                 (!caseSensetivee && inputCaptcha.captcha.toLowerCase() === inputCaptcha.value.toLowerCase()))  {
-            onCaptchaValidate(false, CAPTCHA_OK);
+            onCaptchaValidate(true, CAPTCHA_OK);
         }
         else {
-            onCaptchaValidate(true, CAPTCHA_MISMATCH_ERROR);
+            onCaptchaValidate(false, CAPTCHA_MISMATCH_ERROR);
         }
     }, [inputCaptcha])
 
