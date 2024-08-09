@@ -27,7 +27,7 @@ export const NiceSimpleCaptcha = (
   const innerCaptcha = useRef();
 
   return (
-    <Captcha ref={innerCaptcha} 
+    <Captcha refs={innerCaptcha} 
       className={className}
       inputClassName={inputClassName}
       onCaptchaValidate={(passed, messageCode) => onCaptchaValidate(passed, messageCode)}
