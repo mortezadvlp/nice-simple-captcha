@@ -23,7 +23,7 @@ export const NiceSimpleCaptcha = (
       onEnterPressed = () => {},
       style={},
       refreshButtonIcon = null,
-      caseSensetivee =  false
+      caseSensetive =  true
     }) => {
 
   /*const innerCaptcha = useRef();
@@ -51,7 +51,7 @@ export const NiceSimpleCaptcha = (
       expireAfterSec={Number(expireAfterSec)}
       style={style}
       refreshButtonIcon={refreshButtonIcon}
-      caseSensetivee={caseSensetivee}
+      caseSensetive={caseSensetive}
     />
   )
 }

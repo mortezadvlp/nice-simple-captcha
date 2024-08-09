@@ -19,7 +19,7 @@ export default function Captcha( {
         onEnterPressed = () => {},
         style={},
         refreshButtonIcon = null,
-        caseSensetivee = false
+        caseSensetive = true
     } ) {
 
     const [captchaChars, setCaptchaChars] = useState([]);
@@ -47,8 +47,8 @@ export default function Captcha( {
         else if ((Date.now() - inputCaptcha.generateTime) > (expireAfterSec * 1000)) {
             onCaptchaValidate(false, CAPTCHA_EXPIRED);
         }
-        else if ((caseSensetivee && inputCaptcha.captcha === inputCaptcha.value) ||
-                (!caseSensetivee && inputCaptcha.captcha.toLowerCase() === inputCaptcha.value.toLowerCase()))  {
+        else if ((caseSensetive && inputCaptcha.captcha === inputCaptcha.value) ||
+                (!caseSensetive && inputCaptcha.captcha.toLowerCase() === inputCaptcha.value.toLowerCase()))  {
             onCaptchaValidate(true, CAPTCHA_OK);
         }
         else {
