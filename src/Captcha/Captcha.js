@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowClockwise } from 'react-bootstrap-icons';
 import { useRef } from 'react';
 import { toPng } from 'html-to-image';
-import styles from '../styles.module.css'
+import styles from '../styles.module.css';
 import { CAPTCHA_EMPTY_ERROR, CAPTCHA_EXPIRED, CAPTCHA_LOAD_ERROR, CAPTCHA_MISMATCH_ERROR, CAPTCHA_OK } from '..';
 
 export default function Captcha( {
@@ -47,7 +47,7 @@ export default function Captcha( {
 
     useEffect(() => {
         setTimeout(() => {
-            createCaptchaChars();
+            createCaptchaChars(null);
         }, 500);
     }, [characters, length, crossLine, screenColor, captchaColor])
 
@@ -65,7 +65,11 @@ export default function Captcha( {
         }
     }, [captchaChars])
 
-    const createCaptchaChars = () => {
+    const createCaptchaChars = (e) => {
+        if (e !== null) {
+            e.preventDefault();
+        }
+        
         setCaptchaChars([]);
 
         const scales = ['1.3', '1.45', '1.6', '1.75'];
@@ -121,7 +125,7 @@ export default function Captcha( {
             </div>
             <div className={`${styles.w100} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCenter} ${styles.justifyContentCenter} ${styles.gap1}`} >
                 <input dir='ltr' className={`${styles.w100} ${styles.py1} ${styles.noOutline} ${inputClassName}`} value={inputCaptcha.value} onChange={(e) => {const val = e.target.value; setInputCaptcha(s => ({...s, value: val}))}} onKeyDown={(e) => onEnterCaptured(e.key)} />
-                <button className={`${styles.bgTransparent} ${styles.border0} ${styles.p0} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCenter} ${styles.cursorPointer}`} onClick={() => createCaptchaChars()} >
+                <button className={`${styles.bgTransparent} ${styles.border0} ${styles.p0} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCenter} ${styles.cursorPointer}`} onClick={(e) => createCaptchaChars(e)} >
                     {refreshButtonIcon
                     ?
                         refreshButtonIcon
