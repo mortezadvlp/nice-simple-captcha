@@ -1,4 +1,5 @@
-import React, { useImperativeHandle, useRef } from 'react'
+//import React, { useImperativeHandle, useRef } from 'react'
+import React from 'react'
 import Captcha from './Captcha/Captcha'
 
 export const CAPTCHA_OK             =  0;
@@ -22,9 +23,10 @@ export const NiceSimpleCaptcha = (
       onEnterPressed = () => {},
       style={},
       refreshButtonIcon = null,
+      caseSensetivee =  false
     }) => {
 
-  const innerCaptcha = useRef();
+  /*const innerCaptcha = useRef();
 
   const resetCaptcha = () => {
     innerCaptcha.current.resetCaptcha();
@@ -32,7 +34,7 @@ export const NiceSimpleCaptcha = (
 
   useImperativeHandle(innerCaptcha, () => ({
     resetCaptcha,
-  }))
+  }))*/
 
   return (
     <Captcha ref={innerCaptcha} 
@@ -49,6 +51,7 @@ export const NiceSimpleCaptcha = (
       expireAfterSec={Number(expireAfterSec)}
       style={style}
       refreshButtonIcon={refreshButtonIcon}
+      caseSensetivee={caseSensetivee}
     />
   )
 }

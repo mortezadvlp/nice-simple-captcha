@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useImperativeHandle } from 'react';
 import { ArrowClockwise } from 'react-bootstrap-icons';
-import { useRef } from 'react';
+//import { useRef } from 'react';
 import { toPng } from 'html-to-image';
 import styles from '../styles.module.css';
 import { CAPTCHA_EMPTY_ERROR, CAPTCHA_EXPIRED, CAPTCHA_LOAD_ERROR, CAPTCHA_MISMATCH_ERROR, CAPTCHA_OK } from '..';
@@ -20,20 +20,21 @@ export default function Captcha( {
         onEnterPressed = () => {},
         style={},
         refreshButtonIcon = null,
+        caseSensetivee = false
     } ) {
 
-    const resetCaptcha = () => {
+    /*const resetCaptcha = () => {
         createCaptchaChars(null);
-    }
+    }*/
 
     const [captchaChars, setCaptchaChars] = useState([]);
     const [inputCaptcha, setInputCaptcha] = useState({captcha: '', value: '', generateTime: 0});
-    const captchaRef = useRef(null);
+    //const captchaRef = useRef();
     const [img, setImg] = useState('');
 
-    useImperativeHandle(captchaRef, () => ({
+    /*useImperativeHandle(captchaRef, () => ({
         resetCaptcha,
-    }))
+    }))*/
 
     useEffect(() => {
         if (inputCaptcha.captcha === '') {
@@ -42,7 +43,8 @@ export default function Captcha( {
         else if (inputCaptcha.value === '') {
             onCaptchaValidate(false, CAPTCHA_EMPTY_ERROR);
         }
-        else if (inputCaptcha.captcha !== inputCaptcha.value) {
+        else if ((caseSensetivee && inputCaptcha.captcha !== inputCaptcha.value) ||
+                (!caseSensetivee && inputCaptcha.captcha.toLowerCase() !== inputCaptcha.value.toLowerCase()))  {
             onCaptchaValidate(false, CAPTCHA_MISMATCH_ERROR);
         }
         else if ((Date.now() - inputCaptcha.generateTime) > (expireAfterSec * 1000)) {
