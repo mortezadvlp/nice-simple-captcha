@@ -1,5 +1,4 @@
-import React, { useImperativeHandle, useRef } from 'react'
-import React, { forwardRef } from 'react'
+import React, { useImperativeHandle, useRef, forwardRef } from 'react'
 import Captcha from './Captcha/Captcha'
 
 export const CAPTCHA_OK             =  0;
