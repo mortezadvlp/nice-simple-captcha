@@ -23,7 +23,7 @@ export const NiceSimpleCaptcha = (
       onEnterPressed = () => {},
       style={},
       refreshButtonIcon = null,
-      caseSensetive =  true
+      caseSensetive = true
     }) => {
 
   /*const innerCaptcha = useRef();

@@ -33,6 +33,7 @@ function Example() {
       length={5}
       crossLine={true}
       expireAfterSec={60}
+      caseSensetive={true},
       style={{width: '200px'}}
       refreshButtonIcon = {null}
       onCaptchaValidate={(passed, messageCode) => captchaValidate(passed, messageCode)}
@@ -95,6 +96,11 @@ function Example() {
       <td>expireAfterSec</td>
       <td>number</td>
       <td>Duration that the captcha is valid since it is generated (in sec)</td>
+    </tr>
+    <tr>
+      <td>caseSensetive</td>
+      <td>boolean</td>
+      <td>Use case sensetivity in checking captcha validation</td>
     </tr>
     <tr>
       <td>style</td>
