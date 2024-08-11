@@ -110,7 +110,7 @@ function Example() {
     <tr>
       <td>refreshButtonIcon</td>
       <td>Component</td>
-      <td>An icon for refresh button. If null, a simple clockwise arrow is shown.</td>
+      <td>An icon for Refresh button. If null, a simple clockwise arrow is shown.</td>
     </tr>
     <tr>
       <td>onCaptchaValidate</td>
@@ -128,6 +128,13 @@ function Example() {
 
 ```jsx
 import { CAPTCHA_OK, CAPTCHA_LOAD_ERROR, CAPTCHA_EMPTY_ERROR, CAPTCHA_MISMATCH_ERROR, CAPTCHA_EXPIRED } from 'nice-simple-captcha';
+```
+
+For reseting Captcha programmatically, create a ref using <strong>useRef</strong> and pass it to <strong>NiceSimpleCaptcha</strong> component. And then:
+
+```jsx
+const refCaptcha = useRef();
+refCaptcha.current.resetCaptcha();
 ```
 
 
