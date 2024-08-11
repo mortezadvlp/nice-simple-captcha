@@ -1,11 +1,11 @@
 
-import React, { useState, useRef, useEffect, useImperativeHandle } from 'react';
+import React, { useState, useRef, useEffect, useImperativeHandle, forwardRef } from 'react';
 import { ArrowClockwise } from 'react-bootstrap-icons';
 import { toPng } from 'html-to-image';
 import styles from '../styles.module.css';
 import { CAPTCHA_EMPTY_ERROR, CAPTCHA_EXPIRED, CAPTCHA_LOAD_ERROR, CAPTCHA_MISMATCH_ERROR, CAPTCHA_OK } from '..';
 
-export default function Captcha( {
+const Captcha = forwardRef(( {
         className = '',
         inputClassName = '',
         characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789',
@@ -20,22 +20,22 @@ export default function Captcha( {
         style={},
         refreshButtonIcon = null,
         caseSensetive = true
-    } ) {
+    }, ref ) => {
 
     const [captchaChars, setCaptchaChars] = useState([]);
     const [inputCaptcha, setInputCaptcha] = useState({captcha: '', value: '', generateTime: 0});
     const captchaRef = useRef();
     const [img, setImg] = useState('');
 
-    /*const refMethod = useRef(); 
+    /*const refMethod = useRef();*/ 
 
     const resetCaptcha = () => {
         createCaptchaChars(null);
     }
 
-    useImperativeHandle(refMethod, () => ({
+    useImperativeHandle(ref, () => ({
         resetCaptcha,
-    }))*/
+    }))
 
     useEffect(() => {
         if (inputCaptcha.captcha === '') {
@@ -147,4 +147,6 @@ export default function Captcha( {
             </div>
         </div>
     );
-}
+});
+
+export default Captcha;
