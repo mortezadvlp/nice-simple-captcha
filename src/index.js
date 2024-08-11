@@ -31,7 +31,7 @@ export const NiceSimpleCaptcha = forwardRef((
     innerCaptcha.current.resetCaptcha();
   }
 
-  useImperativeHandle(innerCaptcha, () => ({
+  useImperativeHandle(ref, () => ({
     resetCaptcha,
   }))
 
