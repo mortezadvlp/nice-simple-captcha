@@ -3,7 +3,12 @@ import React, { useState, useRef, useEffect, useImperativeHandle, forwardRef } f
 import { ArrowClockwise } from 'react-bootstrap-icons';
 import { toPng } from 'html-to-image';
 import styles from '../styles.module.css';
-import { CAPTCHA_EMPTY_ERROR, CAPTCHA_EXPIRED, CAPTCHA_LOAD_ERROR, CAPTCHA_MISMATCH_ERROR, CAPTCHA_OK } from '..';
+
+export const _CAPTCHA_OK             =  0;
+export const _CAPTCHA_LOAD_ERROR     = -1;
+export const _CAPTCHA_EMPTY_ERROR    = -2;
+export const _CAPTCHA_MISMATCH_ERROR = -3;
+export const _CAPTCHA_EXPIRED        = -4;
 
 const Captcha = forwardRef(( {
         className = '',
@@ -39,20 +44,20 @@ const Captcha = forwardRef(( {
 
     useEffect(() => {
         if (inputCaptcha.captcha === '') {
-            onCaptchaValidate(false, CAPTCHA_LOAD_ERROR);
+            onCaptchaValidate(false, _CAPTCHA_LOAD_ERROR);
         }
         else if (inputCaptcha.value === '') {
-            onCaptchaValidate(false, CAPTCHA_EMPTY_ERROR);
+            onCaptchaValidate(false, _CAPTCHA_EMPTY_ERROR);
         }
         else if ((Date.now() - inputCaptcha.generateTime) > (expireAfterSec * 1000)) {
-            onCaptchaValidate(false, CAPTCHA_EXPIRED);
+            onCaptchaValidate(false, _CAPTCHA_EXPIRED);
         }
         else if ((caseSensetive && inputCaptcha.captcha === inputCaptcha.value) ||
                 (!caseSensetive && inputCaptcha.captcha.toLowerCase() === inputCaptcha.value.toLowerCase()))  {
-            onCaptchaValidate(true, CAPTCHA_OK);
+            onCaptchaValidate(true, _CAPTCHA_OK);
         }
         else {
-            onCaptchaValidate(false, CAPTCHA_MISMATCH_ERROR);
+            onCaptchaValidate(false, _CAPTCHA_MISMATCH_ERROR);
         }
     }, [inputCaptcha])
 
@@ -132,7 +137,7 @@ const Captcha = forwardRef(( {
                     <div className={`${styles.borderBottom} ${styles.border2} ${styles.positionAbsolute} ${styles.top50}`} style={{width: '90%'}} ref={el => el && el.style.setProperty('border-color', captchaColor, 'important')} ></div>
                     }
                 </div>
-                <div className={`${styles.w100} ${styles.positionAbsolute} ${styles.top0} ${styles.start0}`} ><img src={img} /></div>
+                <div className={`${styles.w100} ${styles.positionAbsolute} ${styles.top0} ${styles.start0}`} ><img className={`${styles.w100}`} src={img} /></div>
             </div>
             <div className={`${styles.w100} ${styles.dFlex} ${styles.flexRow} ${styles.alignItemsCenter} ${styles.justifyContentCenter} ${styles.gap1}`} >
                 <input dir='ltr' className={`${styles.w100} ${styles.py1} ${styles.noOutline} ${inputClassName}`} value={inputCaptcha.value} onChange={(e) => {const val = e.target.value; setInputCaptcha(s => ({...s, value: val}))}} onKeyDown={(e) => onEnterCaptured(e.key)} />

@@ -12,6 +12,7 @@ const App = () => {
   const [line, setLine] = useState(true);
   const [validDur, setValidDur] = useState(60);
   const [message, setMessage] = useState('');
+  const [caseSensetive, setCaseSensetive] = useState(true);
 
   useEffect(() =>{
     const msg = 
@@ -56,6 +57,10 @@ const App = () => {
           <input type='number' value={len} onChange={(e) => setLen(e.target.value)} min='3' max='10' />
         </div>
         <div >
+          <span >Case Sensetive</span>
+          <input type='checkbox' checked={caseSensetive} onChange={(e) => setCaseSensetive(e.target.checked)} />
+        </div>
+        <div >
           <span >Expire After Sec.</span>
           <input type='number' value={validDur} onChange={(e) => setValidDur(e.target.value)} min='30' max='600' />
         </div>
@@ -78,6 +83,7 @@ const App = () => {
         onCaptchaValidate={(passed, messageCode) => captchaValidate(passed, messageCode)}
         onEnterPressed={() => onEnterPressed()}
         refreshButtonIcon = {null}
+        caseSensetive={caseSensetive}
       />
     </div>
     

@@ -1,11 +1,11 @@
 import React, { useImperativeHandle, useRef, forwardRef } from 'react'
-import Captcha from './Captcha/Captcha'
+import Captcha, { _CAPTCHA_EMPTY_ERROR, _CAPTCHA_EXPIRED, _CAPTCHA_LOAD_ERROR, _CAPTCHA_MISMATCH_ERROR, _CAPTCHA_OK } from './Captcha/Captcha'
 
-export const CAPTCHA_OK             =  0;
-export const CAPTCHA_LOAD_ERROR     = -1;
-export const CAPTCHA_EMPTY_ERROR    = -2;
-export const CAPTCHA_MISMATCH_ERROR = -3;
-export const CAPTCHA_EXPIRED        = -4;
+export const CAPTCHA_OK             = _CAPTCHA_OK;
+export const CAPTCHA_LOAD_ERROR     = _CAPTCHA_LOAD_ERROR;
+export const CAPTCHA_EMPTY_ERROR    = _CAPTCHA_EMPTY_ERROR;
+export const CAPTCHA_MISMATCH_ERROR = _CAPTCHA_MISMATCH_ERROR;
+export const CAPTCHA_EXPIRED        = _CAPTCHA_EXPIRED;
 
 export const NiceSimpleCaptcha = forwardRef((
     {
