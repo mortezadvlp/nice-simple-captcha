@@ -13,7 +13,7 @@ npm install --save nice-simple-captcha
 ## Online Demo
 
 Visit this link:
-[https://simacoders.ir/features/#NiceSimpleCaptcha](https://simacoders.ir/features/#NiceSimpleCaptcha)
+[https://simacoders.ir/LibrariesDemo/#NiceSimpleCaptcha](https://simacoders.ir/LibrariesDemo/#NiceSimpleCaptcha)
 
 ## Usage
 
